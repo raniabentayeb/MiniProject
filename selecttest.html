@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .filters {
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter-dropdown select,
+        .filter-options select,
+        .filter-options button {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 10px;
+            align-items: center; /* Align vertically centered */
+            flex-wrap: nowrap; /* Keep everything on one line */
+        }
+
+        .filter-dropdown {
+            flex: 1; /* Adjust the first dropdown width */
+            max-width: 200px;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 10px;
+            flex: 3; /* Adjust the space the filter options take */
+        }
+
+        .filter-options select {
+            flex: 1;  /* Ensure select elements grow equally */
+            max-width: 200px;  /* Control the maximum width */
+        }
+
+        .btn-filters {
+            background-color: #3b7ddd;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+
+        .container {
+            width: 100%; /* Ensure full width */
+        }
+
+
+
+        .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 20%;
+}
+
+.search-bar input {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    width: 50%;
+}
+
+.search-bar .btn-search {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 90px;
+}
+
+
+    </style>
+</head>
+<body>
+    <section class="filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-dropdown">
+                    <select>
+                        <option>Choisir une location ▼</option>
+                        <option>Paris</option>
+                        <option>Lyon</option>
+                        <option>Marseille</option>
+                        <option>Bordeaux</option>
+                    </select>
+                </div>
+                <div class="filter-options">
+                    <select>
+                        <option>Sans livraison</option>
+                        <option>Avec livraison</option>
+                    </select>
+                    <select>
+                        <option>Prix</option>
+                        <option>Moins de 50€</option>
+                        <option>50€ - 100€</option>
+                        <option>Plus de 100€</option>
+                    </select>
+                    <select>
+                        <option>Univers</option>
+                        <option>Immobilier</option>
+                        <option>Véhicules</option>
+                        <option>Électronique</option>
+                    </select>
+                    <button class="btn-filters">Filtres</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Rechercher sur RLA PUB">
+        <button class="btn-search">🔍</button>
+    </div>
+</body>
+</html>

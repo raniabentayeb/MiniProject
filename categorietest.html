@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Mini Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style du lien */
+        .hover-link {
+            color: blue;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Mini page avec taille plus grande pour afficher plus de contenu */
+        .mini-page {
+            display: none;
+            position: absolute;
+            width: 400px; /* Largeur agrandie */
+            height: 300px; /* Hauteur agrandie */
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            z-index: 10;
+            top: 30px; /* Distance par rapport au lien */
+            left: 0;
+        }
+
+        /* Affiche la mini page lorsque l'on survole le lien */
+        .hover-link:hover .mini-page,
+        .mini-page:hover {
+            display: block;
+        }
+
+        /* Styles supplémentaires */
+        .immobilier {
+            width: 380px;
+            height: 280px;
+            background-color: rgb(175, 107, 240);
+            font-size: medium;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .h1immo {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .a {
+            text-decoration: none;
+            color: white;
+            font-size: large;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .list-section {
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li a {
+            color: black;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Page d'accueil</h1>
+
+    <!-- Lien qui affiche la mini page au survol -->
+    <div class="hover-link">Survolez-moi
+        <div class="mini-page">
+            <div class="container">
+                <div class="immobilier">
+                    <h1 class="h1immo">Immobilier</h1>
+                    <div class="list-section">
+                        <a href="#" class="a">Tout immobilier</a>
+                        <ul>
+                            <li><a href="#">Appartement</a></li>
+                            <li><a href="#">Maison</a></li>
+                            <li><a href="#">Terrain</a></li>
+                            <li><a href="#">Voir tout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

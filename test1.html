@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres d'emploi - RLA PUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: white;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-deposer {
+    background-color: #3b7ddd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.search-bar input {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    width: 100%;
+}
+
+.search-bar .btn-search {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.icons-nav a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: space-around;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.filters {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.filter-dropdown select, .filter-options select, .filter-options button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /*width: 100%;*/
+   /* max-width: 200px;  Ajuste cette largeur si besoin */
+}
+
+.filter-options {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-filters {
+    background-color: #3b7ddd;
+    color:  #333;
+    border: none;
+    cursor: pointer;
+}
+
+
+.job-listings {
+    padding: 20px 0;
+}
+
+.job-listings h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.job-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    margin-bottom: 5px;
+}
+
+.job-header .tag {
+    background-color: #ffd700;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+   <!--  <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="c:\Users\HP\Downloads\logo.png" alt="RLA PUB">
+            </div>
+            <div class="nav-actions">
+                <button class="btn-deposer">Déposer une annonce</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher sur RLA PUB">
+                    <button class="btn-search">🔍</button>
+                </div>
+                <nav class="icons-nav">
+                    <a href="#">❤</a>
+                    <a href="#">💬</a>
+                    <a href="#">👤</a>
+                </nav>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Immobilier</a></li>
+                <li><a href="#">Véhicules</a></li>
+                <li><a href="#">Location de vacances</a></li>
+                <li><a href="#">Emploi</a></li>
+                <li><a href="#">Mode</a></li>
+                <li><a href="#">Maison & Jardin</a></li>
+                <li><a href="#">Famille</a></li>
+                <li><a href="#">Électronique</a></li>
+                <li><a href="#">Loisirs</a></li>
+                <li><a href="#">Autres</a></li>
+            </ul>
+        </nav>
+    </header>-->
+
+    <!-- Filtres -->
+    <!-- Filtres -->
+<section class="filters">
+    <div class="container">
+        <div class="filter-dropdown">
+            <select>
+                <option>Choisir une location ▼</option>
+                <option>Paris</option>
+                <option>Lyon</option>
+                <option>Marseille</option>
+                <option>Bordeaux</option>
+            </select>
+        </div>
+        <div class="filter-options">
+            <select>
+                <option>Sans livraison</option>
+                <option>Avec livraison</option>
+            </select>
+            <select>
+                <option>Prix</option>
+                <option>Moins de 50€</option>
+                <option>50€ - 100€</option>
+                <option>Plus de 100€</option>
+            </select>
+            <select>
+                <option>Univers</option>
+                <option>Immobilier</option>
+                <option>Véhicules</option>
+                <option>Électronique</option>
+            </select>
+            <button class="btn-filters">Filtres</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Annonces d'emploi -->
+    <main class="job-listings">
+        <div class="container">
+            <h2>Annonces Offre d'emploi</h2>
+            <p>466 383 annonces</p>
+
+            <!-- Job Card 1 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <span class="tag urgent">Urgent</span>
+                    <span class="tag">À la une</span>
+                </div>
+                <h3>Chauffeur VTC 13.33€ par jour + frais sup (H/F/X)</h3>
+                <p><strong>CDI - 1 500€</strong></p>
+                <p><a href="#">Candidature simplifiée</a></p>
+                <p class="location">Francisco 95130</p>
+                <p class="company">44 DRIVER</p>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="job-card">
+                <div class="job-header">
+                    <span class="tag urgent">Urgent</span>
+                    <span class="tag">À la une</span>
+                </div>
+                <h3>Entrepreneur(euse) téléprospection à domicile 2h/jour (H/F/X)</h3>
+                <p><strong>Indépendant/Freelance - 2 480€ / mois</strong></p>
+                <p><a href="#">Candidature simplifiée</a></p>
+                <p class="location">Beato 20200</p>
+                <p class="company">DEFISC ONLINE</p>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="job-card">
+                <h3>Recherche mécanicien(ne) expérimenté(e) (H/F/X)</h3>
+                <p><strong>CDI</strong></p>
+                <p><a href="#">Candidature simplifiée</a></p>
+                <p class="location">Verrières 91320</p>
+                <p class="date">Aujourd'hui à 17:26 - Nouveauté !</p>
+                <p class="company">FLC 368</p>
+            </div>
+
+            <!-- Job Card 4 -->
+            <div class="job-card">
+                <h3>Ouvrier polyvalent travaux publics (H/F/X)</h3>
+                <p><strong>CDI</strong></p>
+                <p><a href="#">Candidature simplifiée</a></p>
+                <p class="location">Sarcelles 95200</p>
+                <p class="date">Aujourd'hui à 17:26 - Nouveauté !</p>
+                <p class="company">SRAN TP</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+       <!-- <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+            </div>
+            <div class="social-media">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>RLA PUB© 2024</p>
+        </div>
+    </footer>-->
+</body>
+</html>

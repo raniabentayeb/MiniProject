@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+ <style>
+
+
+.div-link{
+   
+   display: block;
+}
+.div-link{
+margin: 100px;
+padding: 10px;
+}
+input::placeholder{
+color: white;
+}
+.search{
+background-color:rgb(167, 167, 228);
+text-decoration:none;
+border: 10px;
+padding: 7px;
+padding-right: 80px;
+border-radius: 5px;
+border-top: 3PX;
+margin-left: 30px;
+margin-top: 10px;
+width: 300px;
+
+color:white;
+display: inline;
+word-spacing: 1px;
+
+
+
+}
+.categories {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin: 20px;
+
+ 
+}
+
+  
+.category {
+    background-color: white;
+    padding: 5px;
+   
+    text-align: center;
+    color:black;
+    margin-right: 700px;
+    margin-left: 500px;
+  
+   
+    text-decoration: none;
+}
+
+ 
+
+
+
+header {
+-webkit-box-shadow: 0 4px 6px -6px #222;
+-moz-box-shadow: 0 4px 6px -6px #222;
+box-shadow: 0 4px 6px -6px #222;
+}
+.th {
+
+margin: 4px;
+padding: 5px;
+display: inline; /* ou inline-block */
+margin-right: 10px;
+text-align: right;
+margin-left: 30px;
+float: right;
+margin-top: 60px;
+font-size:smaller;
+
+
+
+
+}
+.img{
+   width: 20px;
+   float: right;
+   margin-top: 30px;
+   margin-right: px;
+   text-align: right;
+
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************/
+    
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 20%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel-item p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+/********************************************/
+
+
+.product-carousel-container {
+  position: relative;
+  width: 80%;
+
+  overflow: hidden;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.product-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product-item {
+  min-width: 20%;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.item-details {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Arial Narrow', Arial, sans-serif;
+  size: 10px;
+}
+
+
+.heart {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+ margin-left: 150px;
+
+}
+
+.heart.active {
+  color: red;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+@keyframes swipe-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swipe-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+ </style>
+</head>
+<body>
+
+    <header>
+        <form action="">
+           <div class="container">
+            <img src="c:\Users\HP\Downloads\logo.png" alt="" style="height: 100px;"class="logo">
+            <button type="button" class="btn btn-primary" id="plus +" class="deposer" style="margin-bottom: 6px;width: 200px;" > deposer une anonnece</button>
+           
+            <input type="search" placeholder=" Recherche sur RLA PUB 🔍 " class="search"  >  
+    
+        </form>
+          
+                <img src="c:\Users\HP\Desktop\projetpic\se connecter.jpg" alt=""class="img"style="margin-right: 1px;">
+                <h6  class="th" class="text-align:right" style="margin-right: -50px;" >Se connecter</h6>
+                
+               
+                <img src="c:\Users\HP\Desktop\projetpic\messages.jpg" alt=""class="img"style="margin-right:1px;">
+                <h6 class="th" style="margin-right: -40px;">Message</h6>
+                
+                <img src="c:\Users\HP\Desktop\projetpic\favorie.jpg" alt=""class="img"style="margin-right: 3px;">
+                <h6  class="th" class="text-align:right" style="margin-right: -40px;" >Favoris</h6>
+             
+                <img src="c:\Users\HP\Desktop\projetpic\notifications.jpg" alt="" class="img"style="margin-right: 20px;">
+                <h6 class="th" id="titre1" style="margin-right: -50px;">Mes Recherches</h6>
+    
+            <!-- <img src="profil se conecter.jpg" alt=""class="img">
+            <h6  class="th">se connecter</h6>
+           
+            <img src="massage icon.jpg" alt=""class="img">
+            <h6 class="th">message</h6>
+            
+         
+            <img src="recherche.jpg" alt="" class="img">
+            <h6 class="th" id="titre1" >Mes Recherche</h6>-->
+            
+            
+          
+      
+        
+           </div>
+           <section class="categories" style="display: flex; flex-wrap: wrap; justify-content: space-around; margin: 20px;">
+            <a href="" class="category" style="margin: 10px;">Immobilier.</a>
+            <a href="" class="category" style="margin: 10px;">Véhicules.</a>
+            <a href="" class="category" style="margin: 10px;">Location de vacances.</a>
+            <a href="" class="category" style="margin: 10px;">Emploi.</a>
+            <a href="" class="category" style="margin: 10px;">Mode.</a>
+            <a href="" class="category" style="margin: 10px;">Maison & Jardin.</a>
+            <a href="" class="category" style="margin: 10px;">Famille.</a>
+            <a href="" class="category" style="margin: 10px;">Électronique.</a>
+            <a href="" class="category" style="margin: 10px;">Loisirs.</a>
+            <a href="" class="category" style="margin: 10px;">Autres.</a>
+        </section>
+    
+          
+         
+            
+        
+           
+            
+              
+              
+        </header>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<h3> Top categories</h3>
+
+
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\vetements.avif" alt="Vêtements">
+        <p>Vêtements</p>
+      </div>
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\topcat-holidays-summer.avif" alt="Vacances">
+        <p>Vacances</p>
+      </div>
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\astuces_maison.avif" alt="Astuces Maison">
+        <p>Astuces Maison</p>
+      </div>
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\offres_emploi.avif" alt="Offres d'emploi">
+        <p>Offres d'emploi</p>
+      </div>
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\ventes_immo.avif" alt="Ventes immo">
+        <p>Ventes immo</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\ameublement.avif" alt="Ventes immo">
+        <p>Voitures</p>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\ameublement.avif" alt="Ventes immo">
+        <p>Ameublement</p>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\electromenager.avif" alt="Ventes immo">
+        <p>Electroménager</p>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\decoration.avif" alt="Ventes immo">
+        <p>Decoration</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\informatique.avif" alt="Ventes immo">
+        <p>Ordinateurs</p>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="c:\Users\HP\Desktop\projetpic\livres.avif" alt="Ventes immo">
+        <p>Livres</p>
+      </div>
+
+
+
+
+
+    </div>
+    <button class="arrow left" onclick="swipeLeft()">&#9664;</button>
+    <button class="arrow right" onclick="swipeRight()">&#9654;</button>
+  </div>
+
+  <script>
+
+let index = 0;
+
+function swipeRight() {
+  const carousel = document.querySelector('.carousel');
+  const totalItems = document.querySelectorAll('.carousel-item').length;
+  if (index < totalItems - 1) {
+    index++;
+  } else {
+    index = 0;
+  }
+  updateCarousel();
+}
+
+function swipeLeft() {
+  const carousel = document.querySelector('.carousel');
+  if (index > 0) {
+    index--;
+  } else {
+    index = document.querySelectorAll('.carousel-item').length - 1;
+  }
+  updateCarousel();
+}
+
+function updateCarousel() {
+  const carousel = document.querySelector('.carousel');
+  const itemWidth = document.querySelector('.carousel-item').clientWidth;
+  carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+}
+
+  </script>
+
+
+<h3>Ordinateurs</h3>
+
+<div class="product-carousel-container">
+    <div class="product-carousel">
+      <div class="product-item">
+        <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur1.webp" alt="2x4 go ram 2666Mhz Ballistix DDR4">
+      
+        <div class="item-details">
+          <p>2x4 go ram 2666Mhz Ballistix DDR4</p>
+          <p>20 €</p>
+         
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur2.webp" alt="PC bureautique / Jeux (FHD)">
+        <div class="item-details">
+          <p>PC bureautique / Jeux (FHD)</p>
+          <p>380 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur3.webp" alt="MacBook Pro M2">
+        <div class="item-details">
+          <p>MacBook Pro M2</p>
+          <p>1000 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur5.webp" alt="Lenovo Thinkpad x220 i5">
+        <div class="item-details">
+          <p>Lenovo Thinkpad x220 i5 HS</p>
+          <p>30 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur4.jpg" alt="Pc gamer/bureau">
+        <div class="item-details">
+          <p>Pc gamer/bureau</p>
+          <p>50 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur4.jpg" alt="Pc gamer/bureau">
+        <div class="item-details">
+          <p>Pc gamer/bureau</p>
+          <p>50 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+
+
+
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur4.jpg" alt="Pc gamer/bureau">
+        <div class="item-details">
+          <p>Pc gamer/bureau</p>
+          <p>50 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+
+
+
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur4.jpg" alt="Pc gamer/bureau">
+        <div class="item-details">
+          <p>Pc gamer/bureau</p>
+          <p>50 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+
+
+
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur4.jpg" alt="Pc gamer/bureau">
+        <div class="item-details">
+          <p>Pc gamer/bureau</p>
+          <p>50 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <button class="arrow left" onclick="swipeLeft()">&#9664;</button>
+    <button class="arrow right" onclick="swipeRight()">&#9654;</button>
+  </div>
+
+  <script>
+  
+
+    function swipeRight() {
+      const carousel = document.querySelector('.product-carousel');
+      const totalItems = document.querySelectorAll('.product-item').length;
+      if (index < totalItems - 1) {
+        index++;
+      } else {
+        index = 0;
+      }
+      updateCarousel();
+    }
+    
+    function swipeLeft() {
+      const totalItems = document.querySelectorAll('.product-item').length;
+      if (index > 0) {
+        index--;
+      } else {
+        index = totalItems - 1;
+      }
+      updateCarousel();
+    }
+    
+    function updateCarousel() {
+      const carousel = document.querySelector('.product-carousel');
+      const itemWidth = document.querySelector('.product-item').clientWidth;
+      carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+    }
+    
+    function toggleFavorite(button) {
+      button.classList.toggle('active');
+    }
+    </script>
+
+</body>
+</html>

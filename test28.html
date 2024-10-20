@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listings</title>
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.product-carousel-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.product-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product-item {
+  min-width: 20%;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.item-details {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.heart {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.heart.active {
+  color: red;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+@keyframes swipe-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swipe-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+ </style>
+</head>
+<body>
+  <div class="product-carousel-container">
+    <div class="product-carousel">
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur1.webp" alt="2x4 go ram 2666Mhz Ballistix DDR4">
+        <div class="item-details">
+          <p>2x4 go ram 2666Mhz Ballistix DDR4</p>
+          <p>20 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur2.webp" alt="PC bureautique / Jeux (FHD)">
+        <div class="item-details">
+          <p>PC bureautique / Jeux (FHD)</p>
+          <p>380 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur3.webp" alt="MacBook Pro M2">
+        <div class="item-details">
+          <p>MacBook Pro M2</p>
+          <p>1000 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur5.webp" alt="Lenovo Thinkpad x220 i5">
+        <div class="item-details">
+          <p>Lenovo Thinkpad x220 i5 HS</p>
+          <p>30 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="c:\Users\HP\Desktop\projetpic\Ordinateur4.jpg" alt="Pc gamer/bureau">
+        <div class="item-details">
+          <p>Pc gamer/bureau</p>
+          <p>50 €</p>
+          <button class="heart" onclick="toggleFavorite(this)">&#10084;</button>
+        </div>
+      </div>
+    </div>
+    <button class="arrow left" onclick="swipeLeft()">&#9664;</button>
+    <button class="arrow right" onclick="swipeRight()">&#9654;</button>
+  </div>
+
+  <script>let index = 0;
+
+    function swipeRight() {
+      const carousel = document.querySelector('.product-carousel');
+      const totalItems = document.querySelectorAll('.product-item').length;
+      if (index < totalItems - 1) {
+        index++;
+      } else {
+        index = 0;
+      }
+      updateCarousel();
+    }
+    
+    function swipeLeft() {
+      const totalItems = document.querySelectorAll('.product-item').length;
+      if (index > 0) {
+        index--;
+      } else {
+        index = totalItems - 1;
+      }
+      updateCarousel();
+    }
+    
+    function updateCarousel() {
+      const carousel = document.querySelector('.product-carousel');
+      const itemWidth = document.querySelector('.product-item').clientWidth;
+      carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+    }
+    
+    function toggleFavorite(button) {
+      button.classList.toggle('active');
+    }
+    </script>
+</body>
+</html>
