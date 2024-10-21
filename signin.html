@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.11.1/bootstrap-icons.css">
+    <style>
+        body {
+            width: 100%;
+          
+        }
+        input{
+            border: 1px rgb(199, 193, 193) solid;
+            
+        }
+         /* Ensure the page takes the full height of the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* The content area */
+.content {
+    min-height: calc(100vh - 150px); /* Adjust the value based on the height of the footer */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+
+    
+    padding: 20px;
+    font-family: Arial, sans-serif;
+   
+    width: 100%;
+    bottom: 0;
+    height: 120px; /* Fixed height for the footer */
+   
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: rgb(84, 80, 80);
+    text-decoration: none;
+    margin: 0 90px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+}
+
+.footer-links a:hover {
+    color:#6762c7;
+
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    color: rgb(26, 29, 98);
+    font-size: 24px;
+    margin: 80px 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+}
+
+.social-media a:hover {
+    color: #6762c7;
+}
+
+.footer-bottom {
+    font-size: 16px;
+    color: rgb(54, 64, 155);
+    font-weight: bold;
+}
+
+.footer-bottom p {
+    margin: 0;
+    margin-top: 25px;
+    font-family: serif;
+    font-size: small;
+    
+}
+
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="Capture d’écran (80).png" alt="Image" style="width: 250px; height: 200px;"><br>
+        <input type="text" id="username" placeholder="Email/Username" style="border-radius: 5px;height: 38px;padding: 10px;margin-top: 10px;" required><br><br>
+        <input type="password" id="password" placeholder="Password" style="border-radius: 5px; height: 38px;padding: 10px;" required><br>
+        <span style="color: rgb(26, 29, 98);margin-left: 57px;">Forgot password?</span><br><br>
+
+        <!-- Conteneur pour attacher les boutons -->
+        
+            <!-- Bouton "Sign in" sans espace en bas -->
+            <button  name="signin" id="signin" class="btn btn-block" style="width: 140px; height: px; border-radius: 6px;background-color: rgb(26, 29, 98);color: white;">Sign in</button>
+
+            <!-- Ligne de séparation attachée directement au bouton "Sign in" -->
+            <div class="d-flex justify-content-center align-items-center my-2">
+                <div style="border: 1px solid rgba(103, 74, 74, 0.263); width: 60px;"></div>
+                <span class="mx-3">Or sign in with</span>
+                <div style="border: 1px solid rgba(103, 74, 74, 0.263); width: 60px;"></div>
+            </div>
+
+            <!-- Bouton Google avec une marge en haut -->
+            <button class="btn border-secondary px-3 mt-3"><i class="bi bi-google px-2"></i>Sign in with Google</button>
+
+            <!-- Texte attaché au bouton "Sign in with Google" sans marge supplémentaire -->
+            <div class="d-flex justify-content-center mt-2">
+                <span>Don't have an account?</span> 
+                <span class="ms-2" style="color: rgb(26, 29, 98);">Sign Up</span>
+            </div>
+        </div>
+    </div>
+      <!-- Footer Section -->
+      <footer class="mt-5 " style="text-align: center; ">
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="social-media">
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p style="color: rgb(26, 29, 98);">RLA PUB© 2024</p>
+        </div>
+</body>
+</html>
